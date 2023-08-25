@@ -116,11 +116,11 @@ workflows:
             - set-environment:
                 cluster: non-prod-us-east-2
                 source-env: op.nonprod.env
-          after-terraform:
-            - do/circle-deploy
-            - do/slack-webhook:
-                message: lab-platform-vpc non-prod-us-east-2 deployment
-                webhook-url: $LAB_EVENTS_CHANNEL_WEBHOOK
+          # after-terraform:
+          #   - do/circle-deploy
+          #   - do/slack-webhook:
+          #       message: lab-platform-vpc non-prod-us-east-2 deployment
+          #       webhook-url: $LAB_EVENTS_CHANNEL_WEBHOOK
           requires:
             - approve non-prod-us-east-2 changes
           filters: *on-push-main
