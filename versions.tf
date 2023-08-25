@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.1"
+  required_version = "~> 1.3"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -8,9 +8,9 @@ terraform {
 
   backend "remote" {
     hostname     = "app.terraform.io"
-    organization = "twdps"
+    organization = "twks-cohort"
     workspaces {
-      prefix = "lab-platform-vpc-"
+      prefix = "cdi101team13-lab-platform-vpc-"
     }
   }
 }
